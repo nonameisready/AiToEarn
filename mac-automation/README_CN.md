@@ -28,10 +28,15 @@ cd ~/aitoearn-automation
 # 2. 配置
 cp config.example.json config.json
 # 编辑 config.json：
-#   base_url    = 你本地 AiToEarn 服务地址 + 全局前缀，默认 http://127.0.0.1:3000/api
+#   base_url    = Docker 部署默认 http://127.0.0.1:8080/api（nginx 统一入口）
 #   api_key     = AiToEarn 网页 设置 -> API Key 里生成（推荐）
-#   openapi_url = 默认 http://127.0.0.1:3000/docs/openapi.json
-#                 （需要后端配置 openapi.enable=true；Docker 部署默认开启）
+#   openapi_url = Docker 部署为 http://127.0.0.1:8080/api/docs/openapi.json
+#
+# 注意：Docker 默认配置未开启 openapi 文档，需要在后端的 config.yaml
+# （project/aitoearn-backend/apps/aitoearn-server/config/config.yaml）加上：
+#     openapi:
+#       enable: true
+# 然后 docker restart aitoearn-server
 
 # 3. 初始化接口快照（同时验证服务连通）
 python3 check_api.py --accept
