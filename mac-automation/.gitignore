@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+config.json
+.api_snapshot.json
+logs/
+done/
+failed/
