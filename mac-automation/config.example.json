@@ -1,0 +1,7 @@
+{
+  "base_url": "http://127.0.0.1:3000/api",
+  "api_key": "在 AiToEarn 设置里生成的 API Key（和 token 二选一）",
+  "token": "",
+  "openapi_url": "http://127.0.0.1:3000/docs/openapi.json",
+  "verify_tls": true
+}
